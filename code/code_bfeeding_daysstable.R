@@ -18,4 +18,13 @@ boxplot_bfeeding <- ggplot(data = df_alive, aes(x = bfeeding, y = days_stable, f
     title = "Days to Stabilization by Breastfeeding Status Among Survivors"
   )
 
-saveRDS(boxplot_bfeeding, file = here::here("output/figures/boxplot_bfeeding_days.rds"))
+saveRDS(boxplot_bfeeding,
+        here::here("output/figures/boxplot_bfeeding_days.rds"))
+
+ggsave(
+  here::here("output/figures/boxplot_bfeeding_days.png"),
+  plot = boxplot_bfeeding,
+  width = 7, 
+  height = 5, 
+  dpi = 300
+)
